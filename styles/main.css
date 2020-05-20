@@ -13,7 +13,7 @@
 @font-face {
     src: url(../fonts/RobotoMono-Bold.ttf);
     font-family: 'Roboto';
-    font-weight: 900;
+    font-weight: 1000;
 }
 
 *{
@@ -46,7 +46,7 @@ body {
 
 .banner {
     grid-area: banner;
-    font-size: 0.85rem;
+    font-size: 0.86rem;
     background: #141414;
     color: #ffffff;
     text-align: center;
@@ -55,10 +55,10 @@ body {
 
 .banner .banner-info{
     font-family: 'Roboto';
-    font-weight: 900;
+    font-weight: 1000;
     width: 90vw;
     margin: 0 auto;
-    padding: 0.1rem;
+    padding: 0.4rem 0.2rem;
     text-align: center;
 }
 
@@ -70,7 +70,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     margin-left: 0rem;
     grid-area: nav;
     background: #ffffff;
@@ -94,7 +94,6 @@ body {
 
 .logo img {
     width: 6.5rem;
-
 }
 
 .nav-element {
@@ -104,8 +103,19 @@ body {
     justify-content: center;
 }
 
+.form-search {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    /* height: 3rem; */
+    /* padding-right: 0rem;
+    width: 39rem;
+    margin: 0 0.5rem; */
+}
+
 .nav-element .menu {
-    display: inline-flex;
+    display: flex;
 }
 
 .form-search .icon-search path {
@@ -117,6 +127,7 @@ body {
 .form-search .search-button {
     visibility: hidden;
     vertical-align: middle;
+    display: none;
 }
 
 .form-search svg {
@@ -137,35 +148,52 @@ body {
     vertical-align: middle;
     display: flex;
     flex-direction: row;
-    padding-top: 0.2rem;
+    align-content: center;
+    justify-content: center;
+    /* padding-top: 0.1rem;
+    padding-right: 2rem; */
+}
+ 
+.menu .connect label {
+    /* width: 2rem; */
+}
+
+.menu .connect svg,
+.menu .panier svg {
+    position: relative;
+    margin: 0 0.1rem;
+    padding: 0 0rem; 
+    top: 0.2rem;
+    /* right: -2rem; */
+    width: 2rem;
+    height: 1.8rem;
+}
+
+.menu .panier svg {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 .menu .help {
     visibility: hidden;
+    display: none;
 }
 
 .menu .help label:last-child,
 .menu .connect .svg-show,
 .menu p {
     visibility: hidden;
+    display: none;
 }
 
-.menu .connect label ,
+.menu .connect div ,
 .menu .panier {
+    height: auto;
     display: flex;
     flex-direction: row;
     /* align-items: stretch;  */
     justify-content: center;
-}
 
-.panier p {
-    align-self: center;
-    vertical-align: top;
-}
-
-.connect p {
-    position: relative;
-    top:-0.75rem;
 }
 
 @media (min-width: 40rem) {
@@ -182,6 +210,7 @@ body {
         font-family: 'Roboto';
         font-weight: 900;
         width: 38rem;
+        padding: 0.1rem;
     }
 
     .btn-phon {
@@ -200,10 +229,10 @@ body {
     }
 
     .form-search {
-        display: flex;
+        /* display: flex;
         flex-direction: row;
         align-content: center;
-        justify-content: center;
+        justify-content: center; */
         /* height: 3rem; */
         padding-right: 0rem;
         width: 39rem;
@@ -240,6 +269,7 @@ body {
     .zone-search input,
     .form-search .search-button {
         visibility:visible;
+        display: initial;
     }
     
     /* .zone-search > svg {
@@ -271,12 +301,21 @@ body {
     .zone-search input,
     .form-search .search-button {
         visibility: visible;
+        display: initial;
     }
+
+    .menu {
+        vertical-align: middle;
+        display: flex;
+        flex-direction: row;
+        padding-top: 0rem;
+    }
+
 
     .menu .connect,
     .menu .help,
     .menu .panier {
-        color: #747474;
+        color: #5a5858;
         fill:  #535353;
         margin-right: 0.1rem;
         height: 2rem;
@@ -286,25 +325,40 @@ body {
     }
 
     .menu .svg-show {
-        position: relative;
-        top: 0.3rem;
+        /* position: relative; */
+        /* top: 0.3rem; */
     }
 
     .menu .connect svg,
     .menu .help svg,
     .menu .panier svg {
-        vertical-align: top;
+        vertical-align: middle;
+        cursor: pointer;
         margin: 0rem 0.3rem;
+        padding: initial; 
+        top: 0rem;
+        right: initial;
+        width: initial;
+        height: initial;
+    }
+
+    .menu .help {
+        visibility: visible;
+        display: flex;
     }
 
     .menu .help label:last-child,
     .menu .connect .svg-show,
     .menu p {
         visibility: visible;
+        display: initial;
+        top: -0.7rem;
     }
 
-    .menu label {
+    .menu label,
+    .menu .connect > div {
         vertical-align: middle;
+        cursor: pointer;
     }
 
     .menu .connect:active,
@@ -319,5 +373,19 @@ body {
     .menu .panier:hover {
         color: #ffa500;
         fill: #ffa500;
+    }
+
+    .panier p {
+        align-self: center;
+        vertical-align: top;
+    }
+    
+    .help p {
+        vertical-align: middle;
+    }
+
+    .connect p {
+        position: relative;
+        top:-0.75rem;
     }
 }
