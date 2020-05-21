@@ -16,7 +16,7 @@
     font-weight: 1000;
 }
 
-*{
+* , ::before , ::after {
     font-family: 'Lato-regular';
     box-sizing: border-box;
     font-weight: 700;
@@ -32,7 +32,7 @@ body {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2.8rem 3.5rem auto 20rem;
+    grid-template-rows: 2.8rem 5rem auto 20rem;
     grid-template-areas: "banner banner banner" 
                          "nav nav nav"
                          "main main main"
@@ -68,22 +68,27 @@ body {
 
 .header-properties {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
     margin-left: 0rem;
     grid-area: nav;
     background: #ffffff;
     box-shadow: 0.05rem 0.05rem 0.05rem 0.05rem rgba(235, 235, 235, 0.664);
 }
 
+.header-adjust {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
 .logo {
     display: flex;
     /* width: 4rem; */
-    margin-top: 0.8rem;
-    align-self: flex-start;
-    justify-self: flex-start;
-    padding:  0rem 4rem 0rem 1rem;
+    margin-top: 0rem;
+    align-self: center;
+    vertical-align: middle;
+    /* padding:  0rem 4rem 0rem 1rem; */
 }
 
 .logo .btn-phon {
@@ -96,32 +101,25 @@ body {
     width: 6.5rem;
 }
 
-.nav-element {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.form-search {
+/* .form-search {
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
-    /* height: 3rem; */
+    height: 2rem;
+    flex-wrap: wrap;
+    align-self: flex-end;
+    order: 2;
     /* padding-right: 0rem;
     width: 39rem;
-    margin: 0 0.5rem; */
-}
-
-.nav-element .menu {
-    display: flex;
-}
+    margin: 0 0.5rem; 
+} */
 
 .form-search .icon-search path {
     fill: #696969;    
 }
 
+.zone-search svg,
 .zone-search .rntl,
 .zone-search input,
 .form-search .search-button {
@@ -134,26 +132,41 @@ body {
     color: #5f5e5ea9;
 }
 
-.zone-search > svg {
-    margin: 0rem 0.35rem;
-    height: 90%;
-    width: 1.5rem;
+.nav-element {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    vertical-align: middle;
+    /* width: 50rem; */
 }
 
-.form-search .icon-search {
-    vertical-align: middle;
+.nav-element .menu {
+    display: flex;
+    flex-shrink: 0;
 }
 
 .menu {
     vertical-align: middle;
     display: flex;
     flex-direction: row;
-    align-content: center;
+    align-content: center; 
     justify-content: center;
     /* padding-top: 0.1rem;
     padding-right: 2rem; */
 }
- 
+
+.zone-search__mob {
+    border: 1px solid #aca8a8;
+    border-radius: 5px;
+    margin-right: 0rem;
+    width: 100vw;
+    height: 2.5rem;
+    background: white;
+    vertical-align: middle;
+}
+
 .menu .connect label {
     /* width: 2rem; */
 }
@@ -193,10 +206,15 @@ body {
     flex-direction: row;
     /* align-items: stretch;  */
     justify-content: center;
-
 }
 
-@media (min-width: 40rem) {
+.zone-search__mob {
+    display: flex;
+    flex: 0 1 25rem;
+}
+
+
+@media (min-width: 47rem) {
     body {
        grid-template-columns: repeat(3, 1fr);
        grid-template-rows: 3.8rem 4.5rem auto 20rem;
@@ -204,6 +222,7 @@ body {
 
     .banner {
         font-size: 1.4rem;
+        min-width: 68rem;
     }
 
     .banner .banner-info{
@@ -213,15 +232,33 @@ body {
         padding: 0.1rem;
     }
 
+    .header-properties {
+        align-items: center;
+        justify-content: center;
+        min-width: 68rem;
+    }
+
+    .header-adjust {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.9rem 0;
+        margin: 0 auto;
+        max-width: 75rem;
+    }
+
     .btn-phon {
         display: none;
     }
 
     .logo {
+        vertical-align: middle;
         /* width: 4rem; */
         align-self: center;
-        justify-self: flex-start;
-        padding:  0rem 4rem 0rem 5rem;
+        /* padding:  0rem 4rem 0rem 5rem; */
+        margin-left: 0.4rem;
+        margin-right: 2rem;
     }
 
     .logo img {
@@ -229,13 +266,12 @@ body {
     }
 
     .form-search {
-        /* display: flex;
+        display: flex;
         flex-direction: row;
         align-content: center;
-        justify-content: center; */
-        /* height: 3rem; */
+        justify-content: center;
+        height: 2.2rem;
         padding-right: 0rem;
-        width: 39rem;
         margin: 0 0.5rem;
     }
 
@@ -244,8 +280,9 @@ body {
         font-weight: 400;
         align-self: center;
         font-size: 1.05rem;
-        width: 24.9rem;
-        height: 2.3rem;
+        text-overflow: ellipsis; /* show dotte when width is decreased */
+        width: 30vw;
+        height: 2.1rem;
         border-style: none;
         border: none;
         outline: none;
@@ -260,8 +297,8 @@ body {
         border: 1px solid #aca8a8;
         border-radius: 5px;
         margin-right: 0rem;
-        width: 29.9rem;
-        height: 2.5rem;
+        width: 40vw; 
+        height: 2.25rem;
         background: white;
         vertical-align: middle;
     }
@@ -272,7 +309,7 @@ body {
         display: initial;
     }
     
-    /* .zone-search > svg {
+    .zone-search > svg {
         margin: 0rem 0.35rem;
         height: 90%;
         width: 1.5rem;
@@ -280,13 +317,13 @@ body {
     
     .form-search .icon-search {
         vertical-align: middle;
-    } */
+    }
 
     .form-search .search-button {
         outline: none;
         border-style: none;
         margin-left: 0.4rem;
-        height: 2.5rem;
+        height: 2.25rem;
         padding: 0.2rem 0.9rem;
         border-radius: 4px;
         border-color: #f19317f8;
@@ -298,19 +335,30 @@ body {
         font-size: 0.9rem;
     }
 
+    .zone-search svg,
     .zone-search input,
     .form-search .search-button {
         visibility: visible;
         display: initial;
     }
 
+    .nav-element {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        vertical-align: middle;
+        /* width: 50rem; */
+    }
+    
     .menu {
         vertical-align: middle;
         display: flex;
         flex-direction: row;
         padding-top: 0rem;
+        /* width: 15vw; */
     }
-
 
     .menu .connect,
     .menu .help,
@@ -388,4 +436,10 @@ body {
         position: relative;
         top:-0.75rem;
     }
+
+    .zone-search__mob {
+        display: none;
+    }
 }
+
+/* @media only screen and (min-width:) */
