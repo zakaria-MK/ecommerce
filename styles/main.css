@@ -13,7 +13,7 @@
 @font-face {
     src: url(../fonts/RobotoMono-Bold.ttf);
     font-family: 'Roboto';
-    font-weight: 1000;
+    font-weight: 1100;
 }
 
 * , ::before , ::after {
@@ -32,7 +32,7 @@ body {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2.8rem 5rem auto 20rem;
+    grid-template-rows: 2.8rem 6.4rem auto 20rem;
     grid-template-areas: "banner banner banner" 
                          "nav nav nav"
                          "main main main"
@@ -46,28 +46,31 @@ body {
 
 .banner {
     grid-area: banner;
-    font-size: 0.86rem;
     background: #141414;
     color: #ffffff;
     text-align: center;
-    justify-items: center;
+    /* justify-items: center; */
 }
 
-.banner .banner-info{
+.banner .banner-info {
+    font-size: 90%;
     font-family: 'Roboto';
-    font-weight: 1000;
-    width: 90vw;
+    font-weight: 1100;
+    width: 97vw;
     margin: 0 auto;
-    padding: 0.4rem 0.2rem;
+    padding: 0.2rem 0.2rem;
     text-align: center;
 }
 
 .banner-info .color-banner{
     color: #ffa500;
+    font-size: 0.94rem;
 }
 
 .header-properties {
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     margin-left: 0rem;
     grid-area: nav;
     background: #ffffff;
@@ -80,42 +83,31 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
+    padding: 0.85rem 0.85rem;
 }
 
 .logo {
     display: flex;
-    /* width: 4rem; */
     margin-top: 0rem;
-    align-self: center;
+    /* align-self: center; */
     vertical-align: middle;
-    /* padding:  0rem 4rem 0rem 1rem; */
 }
 
 .logo .btn-phon {
-    align-self: flex-start;
-    justify-self: flex-start;
-    margin-right: 0.9rem;
+    /* align-self: flex-start; */
+    /* justify-self: flex-start; */
+    margin-right: 0.1rem;
 }
 
-.logo img {
-    width: 6.5rem;
+.logo .logo-site {
+    width: 9rem;
 }
 
-/* .form-search {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    height: 2rem;
-    flex-wrap: wrap;
-    align-self: flex-end;
-    order: 2;
-    /* padding-right: 0rem;
-    width: 39rem;
-    margin: 0 0.5rem; 
-} */
+.logo .logo-desktop {
+    display: none;
+}
 
-.form-search .icon-search path {
+.form-search .icon-search {
     fill: #696969;    
 }
 
@@ -132,59 +124,24 @@ body {
     color: #5f5e5ea9;
 }
 
-.nav-element {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    vertical-align: middle;
-    /* width: 50rem; */
-}
-
 .nav-element .menu {
-    display: flex;
-    flex-shrink: 0;
+    /* display: flex; */
+    /* flex-shrink: 0; */
 }
 
 .menu {
-    vertical-align: middle;
     display: flex;
-    flex-direction: row;
-    align-content: center; 
-    justify-content: center;
-    /* padding-top: 0.1rem;
-    padding-right: 2rem; */
-}
-
-.zone-search__mob {
-    border: 1px solid #aca8a8;
-    border-radius: 5px;
-    margin-right: 0rem;
-    width: 100vw;
-    height: 2.5rem;
-    background: white;
-    vertical-align: middle;
-}
-
-.menu .connect label {
-    /* width: 2rem; */
 }
 
 .menu .connect svg,
 .menu .panier svg {
-    position: relative;
-    margin: 0 0.1rem;
-    padding: 0 0rem; 
-    top: 0.2rem;
-    /* right: -2rem; */
-    width: 2rem;
-    height: 1.8rem;
+    display: flex;
 }
 
 .menu .panier svg {
     margin-left: 1rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
+    width: 24px;
 }
 
 .menu .help {
@@ -192,27 +149,46 @@ body {
     display: none;
 }
 
-.menu .help label:last-child,
+.menu .help .svg-show,
 .menu .connect .svg-show,
 .menu p {
     visibility: hidden;
     display: none;
 }
 
-.menu .connect div ,
-.menu .panier {
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    /* align-items: stretch;  */
-    justify-content: center;
-}
-
 .zone-search__mob {
+    border: 1px solid #aca8a8;
+    border-radius: 20px;
+    background: white;
+    vertical-align: middle;
     display: flex;
-    flex: 0 1 25rem;
+    align-content: center;
+    justify-content: flex-start;
+    padding: 0rem 0.2rem;
+    width:96vw;
+    height: 2.1rem;
+    margin: 0rem auto 0.4rem;
+    
 }
 
+.zone-search .icon-search__mob {
+    margin-left: 0.5rem;
+    fill: #cec7c7;
+    vertical-align: middle;
+}
+
+.zone-search__mob .text-mob__search {
+    vertical-align: middle;
+    margin: 0rem 0.7rem;
+    padding-top: 0.3rem;
+    color: #aca8a8;
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.zone-search__mob .icon-search__mob {
+    fill: #525050;
+}
 
 @media (min-width: 47rem) {
     body {
@@ -221,18 +197,26 @@ body {
     }
 
     .banner {
-        font-size: 1.4rem;
-        min-width: 68rem;
+       min-width: 68rem;
+       
     }
 
-    .banner .banner-info{
+    .banner .banner-info {
+        font-size: 1.4rem;
+        font-size-adjust:auto;
         font-family: 'Roboto';
         font-weight: 900;
         width: 38rem;
         padding: 0.1rem;
     }
 
+    .banner-info .color-banner{
+        font-size: 1.5rem;
+    }
+    
+
     .header-properties {
+        flex-direction: row;
         align-items: center;
         justify-content: center;
         min-width: 68rem;
@@ -243,7 +227,7 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 0.9rem 0;
+        padding: 0.8rem 0;
         margin: 0 auto;
         max-width: 75rem;
     }
@@ -254,15 +238,21 @@ body {
 
     .logo {
         vertical-align: middle;
-        /* width: 4rem; */
         align-self: center;
-        /* padding:  0rem 4rem 0rem 5rem; */
         margin-left: 0.4rem;
         margin-right: 2rem;
     }
 
-    .logo img {
+    .logo .logo-site {
         width: 9rem;
+    }
+
+    .logo .logo-desktop {
+        display: initial;
+    }
+
+    .logo .logo-phone {
+        display: none;
     }
 
     .form-search {
@@ -281,7 +271,8 @@ body {
         align-self: center;
         font-size: 1.05rem;
         text-overflow: ellipsis; /* show dotte when width is decreased */
-        width: 30vw;
+        width: 26vw;
+        max-width: 24rem;
         height: 2.1rem;
         border-style: none;
         border: none;
@@ -297,7 +288,8 @@ body {
         border: 1px solid #aca8a8;
         border-radius: 5px;
         margin-right: 0rem;
-        width: 40vw; 
+        width: 35vw; 
+        max-width: 30rem;
         height: 2.25rem;
         background: white;
         vertical-align: middle;
@@ -326,7 +318,6 @@ body {
         height: 2.25rem;
         padding: 0.2rem 0.9rem;
         border-radius: 4px;
-        border-color: #f19317f8;
         background: #f19317f8;
         box-shadow: 1px 4px 5px 2px rgba(206, 205, 205, 0.589);
         color: #ffffff;
@@ -345,19 +336,11 @@ body {
     .nav-element {
         display: flex;
         flex-wrap: nowrap;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        vertical-align: middle;
-        /* width: 50rem; */
     }
     
     .menu {
         vertical-align: middle;
         display: flex;
-        flex-direction: row;
-        padding-top: 0rem;
-        /* width: 15vw; */
     }
 
     .menu .connect,
@@ -365,46 +348,41 @@ body {
     .menu .panier {
         color: #5a5858;
         fill:  #535353;
-        margin-right: 0.1rem;
+        margin-right: 0.4rem;
         height: 2rem;
         padding: 0.2rem;
         cursor: pointer;
         text-decoration: none;
     }
 
-    .menu .svg-show {
-        /* position: relative; */
-        /* top: 0.3rem; */
-    }
-
     .menu .connect svg,
     .menu .help svg,
     .menu .panier svg {
+        display: initial;
         vertical-align: middle;
         cursor: pointer;
         margin: 0rem 0.3rem;
         padding: initial; 
-        top: 0rem;
         right: initial;
         width: initial;
         height: initial;
     }
 
-    .menu .help {
+    .menu .help ,
+    .menu .connect,
+    .menu .panier {
         visibility: visible;
         display: flex;
     }
 
-    .menu .help label:last-child,
+    .menu .help .svg-show,
     .menu .connect .svg-show,
     .menu p {
         visibility: visible;
         display: initial;
-        top: -0.7rem;
     }
 
-    .menu label,
-    .menu .connect > div {
+    .menu div {
         vertical-align: middle;
         cursor: pointer;
     }
@@ -428,13 +406,9 @@ body {
         vertical-align: top;
     }
     
-    .help p {
-        vertical-align: middle;
-    }
-
+    .help p,
     .connect p {
-        position: relative;
-        top:-0.75rem;
+        vertical-align: middle;
     }
 
     .zone-search__mob {
