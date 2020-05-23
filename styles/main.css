@@ -49,7 +49,6 @@ body {
     background: #141414;
     color: #ffffff;
     text-align: center;
-    /* justify-items: center; */
 }
 
 .banner .banner-info {
@@ -83,24 +82,27 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-    padding: 0.85rem 0.85rem;
+    padding: 0.65rem 0.55rem;
 }
 
 .logo {
     display: flex;
     margin-top: 0rem;
-    /* align-self: center; */
     vertical-align: middle;
 }
 
 .logo .btn-phon {
-    /* align-self: flex-start; */
-    /* justify-self: flex-start; */
-    margin-right: 0.1rem;
+    margin-right: 0rem;
+    margin-left: 0.4rem;
+}
+
+.logo a {
+    display: inline-block;
 }
 
 .logo .logo-site {
-    width: 9rem;
+    width: 7rem;
+    margin-left: 0.6rem;
 }
 
 .logo .logo-desktop {
@@ -109,6 +111,10 @@ body {
 
 .form-search .icon-search {
     fill: #696969;    
+}
+
+.form-search .zone-search {
+    display: none;
 }
 
 .zone-search svg,
@@ -124,36 +130,21 @@ body {
     color: #5f5e5ea9;
 }
 
-.nav-element .menu {
-    /* display: flex; */
-    /* flex-shrink: 0; */
-}
-
 .menu {
-    display: flex;
-}
-
-.menu .connect svg,
-.menu .panier svg {
-    display: flex;
-}
-
-.menu .panier svg {
-    margin-left: 1rem;
-    margin-right: 0.5rem;
-    width: 24px;
-}
-
-.menu .help {
-    visibility: hidden;
     display: none;
 }
 
-.menu .help .svg-show,
-.menu .connect .svg-show,
-.menu p {
-    visibility: hidden;
-    display: none;
+.icon__for-mob a {
+    text-decoration: none;
+}
+
+.icon__for-mob .svg-person__mob , 
+.icon__for-mob .svg-panier__mob{
+    padding: 7px;
+}
+
+.icon__for-mob .svg-person__mob {
+    margin: 0 0.4rem;
 }
 
 .zone-search__mob {
@@ -172,7 +163,7 @@ body {
 }
 
 .zone-search .icon-search__mob {
-    margin-left: 0.5rem;
+    
     fill: #cec7c7;
     vertical-align: middle;
 }
@@ -187,8 +178,11 @@ body {
 }
 
 .zone-search__mob .icon-search__mob {
+    margin-left: 0.2rem;
     fill: #525050;
 }
+
+
 
 @media (min-width: 47rem) {
     body {
@@ -235,26 +229,26 @@ body {
     .btn-phon {
         display: none;
     }
-
+    
     .logo {
         vertical-align: middle;
         align-self: center;
         margin-left: 0.4rem;
         margin-right: 2rem;
     }
-
+    
     .logo .logo-site {
         width: 9rem;
     }
-
+    
     .logo .logo-desktop {
         display: initial;
     }
-
+    
     .logo .logo-phone {
         display: none;
     }
-
+    
     .form-search {
         display: flex;
         flex-direction: row;
@@ -265,6 +259,11 @@ body {
         margin: 0 0.5rem;
     }
 
+    .form-search .zone-search ,
+    .form-search .search-button {
+        display: initial;
+    }
+    
     .form-search .search {
         font-family: 'Lato-regular';
         font-weight: 400;
@@ -279,12 +278,13 @@ body {
         outline: none;
         vertical-align: middle;
     }
-
+    
     .form-search svg {
         color: rgba(235, 235, 235, 0.664);
     }
-
+    
     .zone-search {
+        display: initial;
         border: 1px solid #aca8a8;
         border-radius: 5px;
         margin-right: 0rem;
@@ -294,7 +294,7 @@ body {
         background: white;
         vertical-align: middle;
     }
-
+    
     .zone-search input,
     .form-search .search-button {
         visibility:visible;
@@ -310,7 +310,7 @@ body {
     .form-search .icon-search {
         vertical-align: middle;
     }
-
+    
     .form-search .search-button {
         outline: none;
         border-style: none;
@@ -325,14 +325,14 @@ body {
         cursor: pointer;
         font-size: 0.9rem;
     }
-
+    
     .zone-search svg,
     .zone-search input,
     .form-search .search-button {
         visibility: visible;
         display: initial;
     }
-
+    
     .nav-element {
         display: flex;
         flex-wrap: nowrap;
@@ -342,10 +342,11 @@ body {
         vertical-align: middle;
         display: flex;
     }
-
+    
     .menu .connect,
     .menu .help,
     .menu .panier {
+        display: flex;
         color: #5a5858;
         fill:  #535353;
         margin-right: 0.4rem;
@@ -354,7 +355,7 @@ body {
         cursor: pointer;
         text-decoration: none;
     }
-
+    
     .menu .connect svg,
     .menu .help svg,
     .menu .panier svg {
@@ -362,38 +363,26 @@ body {
         vertical-align: middle;
         cursor: pointer;
         margin: 0rem 0.3rem;
-        padding: initial; 
-        right: initial;
-        width: initial;
-        height: initial;
     }
-
-    .menu .help ,
-    .menu .connect,
-    .menu .panier {
-        visibility: visible;
-        display: flex;
-    }
-
+    
     .menu .help .svg-show,
     .menu .connect .svg-show,
     .menu p {
-        visibility: visible;
         display: initial;
     }
-
+    
     .menu div {
         vertical-align: middle;
         cursor: pointer;
     }
-
+    
     .menu .connect:active,
     .menu .help:active,
     .menu .panier:active {
         background-color: #e7e7e4;
         border-radius: 2px;
     }
-
+    
     .menu .connect:hover ,
     .menu .help:hover ,
     .menu .panier:hover {
@@ -403,17 +392,21 @@ body {
 
     .panier p {
         align-self: center;
-        vertical-align: top;
     }
     
     .help p,
     .connect p {
         vertical-align: middle;
     }
+    
+    .header-adjust .icon__for-mob {
+        display: none;
+    }
 
     .zone-search__mob {
         display: none;
     }
+
 }
 
 /* @media only screen and (min-width:) */
