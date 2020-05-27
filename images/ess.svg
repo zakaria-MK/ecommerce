@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-viewBox="0 0 512 512" style="enable-background:new 0 0 24 24;" xml:space="preserve" 
-id="favorite-border">
+	viewBox="0 0 512 512"  xml:space="preserve" 
+	id="favorite-border">
           
 	<path d="M469.585,80.732c-55.679-52.984-146.306-52.984-202.003-0.012l-11.581,11l-11.569-10.995
 	c-55.703-52.979-146.318-52.973-202.021,0C15.061,106.739,0,141.244,0,177.874c0,36.642,15.061,71.141,42.415,97.166

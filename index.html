@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="shortcut icon" href="images/jumia.png">
+    <script src="scripts/app.js" defer></script>
     <title>Ecommerce APP</title>
 </head>
 <body>
+    <div id="backdrop"></div>
     <div class="banner">
         <div class="banner-info">
             EN RAISON DES MESURES DE CONFINEMENT <br>
@@ -20,16 +22,16 @@
             <div class="logo">
                 <div class="btn-phon">
                     <svg width="24" height="24" class="menu-phone">
-                        <use xlink:href="images/icons.svg#menu-phone"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#menu-phone"></use>
                     </svg>
                 </div>
                 <a href="index.html" >
                     <svg class="logo-site logo-phone" width="24" height="24">
-                        <use xlink:href="images/icons.svg#logo-site"></use>
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icons.svg#logo-site"></use>
                     </svg>
 
-                    <svg class="logo-site logo-desktop" height="32">
-                        <use xlink:href="images/icons.svg#logo-site"></use>
+                    <svg class="logo-site logo-desktop" role="images" height='32' width="139" viewBox= "0 0 139 32">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xlink:href="images/icons.svg#logo-site" ></use>
                     </svg>
                 </a>
             </div>
@@ -49,7 +51,7 @@
             </form>
             <nav class="nav-element">    
                 <div class="menu">
-                    <div class="connect ">
+                    <div class="connect" id="connect-id">
                         <div for="">
                             <svg veiwBox="0 0 24 24" width="24" height="24">
                                 <use xlink:href="images/icons.svg#person"></use>
@@ -81,7 +83,7 @@
                             <span class="tri"></span>
                         </div>
                         <a href="" class="dr-down__a">
-                            <svg veiwBox="0 0 24 24" width="24" height="24">
+                            <svg veiwBox="0 0 24 24" width="24" height="24" >
                                 <use xlink:href="images/icons.svg#person"></use>
                             </svg>
                             <span>Votre compte </span>

@@ -191,7 +191,6 @@ body {
 
     .banner {
        min-width: 68rem;
-       
     }
 
     .banner .banner-info {
@@ -243,9 +242,10 @@ body {
     .logo .logo-desktop {
         display: initial;
     }
-    
+
     .logo .logo-phone {
         display: none;
+        width: 100%;
     }
     
     .form-search {
@@ -400,6 +400,12 @@ body {
     
     .help p,
     .connect p {
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
         vertical-align: middle;
     }
     
@@ -412,17 +418,30 @@ body {
     }
 
     .connect-list {
+        display: none;  
         position: absolute;
-        display: flex;
+        opacity: 0;
+        /* display: flex; */
         text-align: center;
         flex-direction: column;
         z-index: 10;
         background-color: #ffffff;
         box-shadow: 2px 2px 2px 2px rgba(235, 235, 235, 0.664);
+        border-radius: 6px;
         top: 115%;
         right: 50%;
         width: 55%;
         font-size: 0.85rem;
+    }
+
+    .visible {
+        display: flex !important;
+        opacity: 1 !important;
+    }
+
+    .visible-b {
+        display: block !important;
+        opacity: 1 !important;
     }
 
     .connect-list a {
@@ -526,7 +545,6 @@ body {
     .dr-down__a:hover {
         background-color: #f5f3f3;
         color: #6e6b6b;
-        
     }
 
     .dr-down__a svg,
@@ -545,6 +563,19 @@ body {
     .last {
         padding: 0.2rem;
     }
+
+    #backdrop {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 8;
+        pointer-events: none;
+        opacity: 0;
+        display: none;
+      }
 
 }
 
