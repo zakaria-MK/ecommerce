@@ -49,6 +49,12 @@ body {
     background: #141414;
     color: #ffffff;
     text-align: center;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .banner .banner-info {
@@ -231,8 +237,12 @@ body {
     .logo {
         vertical-align: middle;
         align-self: center;
-        margin-left: 0.4rem;
+        margin-left: 0rem;
         margin-right: 2rem;
+    }
+
+    .logo a {
+        margin-right: 1rem;
     }
     
     .logo .logo-site {
@@ -241,6 +251,7 @@ body {
     
     .logo .logo-desktop {
         display: initial;
+        margin: 0;
     }
 
     .logo .logo-phone {
@@ -269,7 +280,7 @@ body {
         align-self: center;
         font-size: 1.05rem;
         text-overflow: ellipsis; /* show dotte when width is decreased */
-        width: 26vw;
+        width: 82%;
         max-width: 24rem;
         height: 2.1rem;
         border-style: none;
@@ -323,6 +334,7 @@ body {
         vertical-align: middle;
         cursor: pointer;
         font-size: 0.9rem;
+        z-index: 1;
     }
     
     .form-search .search-button:hover {
@@ -350,16 +362,15 @@ body {
     .menu .connect,
     .menu .help,
     .menu .panier {
-        display: flex;
         color: #5a5858;
+        align-self: center;
         fill:  #535353;
         margin-right: 0.4rem;
-        height: 2rem;
-        padding: 0.2rem;
+        padding: 0.39rem 0.1rem;
         cursor: pointer;
         text-decoration: none;
     }
-    
+
     .menu .connect svg,
     .menu .help svg,
     .menu .panier svg {
@@ -386,6 +397,11 @@ body {
         background-color: #e7e7e4;
         border-radius: 2px;
     }
+
+    .connect-active {
+        background-color: #eeeeec;
+        border-radius: 3px;
+    }
     
     .menu .connect:hover ,
     .menu .help:hover ,
@@ -393,13 +409,10 @@ body {
         color: #ffa500;
         fill: #ffa500;
     }
-
-    .panier p {
-        align-self: center;
-    }
-    
+   
     .help p,
-    .connect p {
+    .connect p ,
+    .panier p  {
         -webkit-user-select: none;
         -khtml-user-select: none;
         -moz-user-select: none;
@@ -428,19 +441,20 @@ body {
         background-color: #ffffff;
         box-shadow: 2px 2px 2px 2px rgba(235, 235, 235, 0.664);
         border-radius: 6px;
-        top: 115%;
+        top: 100%;
         right: 50%;
         width: 55%;
         font-size: 0.85rem;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
     }
 
-    .visible {
+    #connect-id.visible {
         display: flex !important;
-        opacity: 1 !important;
-    }
-
-    .visible-b {
-        display: block !important;
         opacity: 1 !important;
     }
 
@@ -570,12 +584,18 @@ body {
         height: 100vh;
         top: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.75);
-        z-index: 8;
+        /* background: rgba(0, 0, 0, 0.75); */
+        /* z-index: 0; */
         pointer-events: none;
         opacity: 0;
         display: none;
-      }
+    }
+
+    #backdrop.visible {
+        display: block !important;
+        pointer-events: all;
+        opacity: 1 !important;
+    }
 
 }
 
