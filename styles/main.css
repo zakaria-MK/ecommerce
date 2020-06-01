@@ -218,6 +218,7 @@ body {
         align-items: center;
         justify-content: center;
         min-width: 68rem;
+        position: sticky;
     }
 
     .header-adjust {
@@ -238,7 +239,7 @@ body {
         vertical-align: middle;
         align-self: center;
         margin-left: 0rem;
-        margin-right: 2rem;
+        margin-right: 3.4rem;
     }
 
     .logo a {
@@ -398,7 +399,8 @@ body {
         border-radius: 2px;
     }
 
-    .connect-active {
+    .connect-active ,
+    .help-active {
         background-color: #eeeeec;
         border-radius: 3px;
     }
@@ -453,12 +455,14 @@ body {
         user-select: none;
     }
 
-    #connect-id.visible {
+    #connect-id.visible ,
+    #help-id.visible {
         display: flex !important;
         opacity: 1 !important;
     }
 
-    .connect-list a {
+    .connect-list a ,
+    .help-list .dr-down__help {
         color: #5a5858;
         text-decoration: none;
     }
@@ -503,28 +507,7 @@ body {
         padding-top: 0rem;
         padding-bottom: 0rem;
     }
-    /* .ou .tri1::before {
-        content: attr(data-mid-txt);
-    } */
-
-    /* .connect-list .tri {
-        background-color: #5a5858 ;
-    } */
-
-    /* .dr-down__signup::before {
-        top: 0;
-        right: 0;
-        left: 0;
-        background-color: #5a5858 ;
-        content: '';
-        position: absolute;
-    } */
-
-    /* .dr-down__signup[data-mid-txt]::after {
-        transform: translate(-50% , 50%);
-        content: attr(data-mid-txt);
-    } */
-
+    
     .connect-list .dr-down__login a {
         background-color: #f19317f8;
         border-radius: 5px;
@@ -595,6 +578,67 @@ body {
         display: block !important;
         pointer-events: all;
         opacity: 1 !important;
+    }
+
+    .help-list {
+        display: none;  
+        position: absolute;
+        opacity: 0;
+        /* display: flex; */
+        /* text-align: center; */
+        flex-direction: column;
+        z-index: 10;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 2px 2px rgba(235, 235, 235, 0.664);
+        border-radius: 6px;
+        top: 100%;
+        right: 15%;
+        width: 55%;
+        font-size: 0.85rem;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+
+    #help-id.visible {
+        display: flex !important;
+        opacity: 1 !important;
+    }
+
+    .help-list .dr-down__help {
+        font-family: sans-serif;
+        color: #666565;
+        font-weight: lighter;
+        padding: 0.7rem 1rem;
+    }
+
+    .dr-down__help:hover {
+        background-color: #f5f3f3;
+        color: #4d4c4c;
+        font-weight: bold;
+        font-size: 0.84rem;
+    }
+
+    .head-main {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem 4.8rem;
+        
+    }
+
+    .aside {
+        font-family: inherit;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        width: 12.9rem;
+        padding: 0.8rem;
+        font-size: 0.85rem;
+        box-shadow: 0.05rem 0.1rem 0.1rem 0.1rem rgba(235, 235, 235, 0.664);
+        border-radius: 4px;
     }
 
 }
