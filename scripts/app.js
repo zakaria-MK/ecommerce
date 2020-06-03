@@ -46,8 +46,7 @@ const helpClearSvg = () => {
         || showListHelpSvg.getAttribute("style") == "") {
         showListHelpSvg.style.transform = 'rotate(180deg)';
     } else {
-        console.log(showListHelpSvg.getAttribute("style"));
-        showListHelpSvg.removeAttribute('style');
+       showListHelpSvg.removeAttribute('style');
     }
 };
 
@@ -56,7 +55,7 @@ const connectClearSvg = () => {
         || showListConnectSvg.getAttribute("style") == "") {
         showListConnectSvg.style.transform = 'rotate(180deg)';
     } else {
-        console.log(showListConnectSvg.getAttribute("style"));
+        
         showListConnectSvg.removeAttribute('style');
     }
 };
@@ -74,3 +73,4 @@ const backdropList = () => {
 connect.addEventListener('click', showListConnect);
 backdrop.addEventListener('click', backdropList);
 help.addEventListener('click', showListHelp);
+
