@@ -5,6 +5,9 @@ let help = document.querySelector('.help');
 let helpList = document.getElementById('help-id');
 let showListConnectSvg = document.getElementById('show-connect');
 let showListHelpSvg = document.getElementById('show-help');
+let listeAside = document.querySelector('.aside');
+let itemAside = document.querySelector('.dr-right__aside-menu');
+let listeAsideMenu = document.querySelector('.item');
 
 const showListConnect = () => {
     let listConnectClasses = listConnect.getAttribute('class');
@@ -68,9 +71,27 @@ const backdropList = () => {
     connect.classList.remove('connect-active');
     helpList.classList.remove('visible');
     help.classList.remove('help-active');
+    // itemAside.classList.remove('visible');
 }
+
+const backdropListAside = () => {
+    listeAside.classList.remove('visible');
+    // backdrop.classList.remove('visible');
+}
+
+const showAside = () => {
+    backdropList();
+    // itemAside.classList.add('visible');
+    backdrop.classList.add('visible');
+}
+
+// const showAsideLi = () => {
+
+// }
 
 connect.addEventListener('click', showListConnect);
 backdrop.addEventListener('click', backdropList);
 help.addEventListener('click', showListHelp);
-
+listeAside.addEventListener('mouseover',  showAside)
+backdrop.addEventListener('mouseover', backdropListAside);
+// listeAsideMenu.addEventListener('mouseover', showAside);
