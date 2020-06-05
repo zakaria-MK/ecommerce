@@ -6,8 +6,9 @@ let helpList = document.getElementById('help-id');
 let showListConnectSvg = document.getElementById('show-connect');
 let showListHelpSvg = document.getElementById('show-help');
 let listeAside = document.querySelector('.aside');
-let itemAside = document.querySelector('.dr-right__aside-menu');
-let listeAsideMenu = document.querySelector('.item');
+let slides = document.getElementsByClassName('mySlides');
+// let dots = document.getElementsByClassName('dot');
+let dots = document.querySelectorAll('.dot');
 
 const showListConnect = () => {
     let listConnectClasses = listConnect.getAttribute('class');
@@ -22,7 +23,6 @@ const showListConnect = () => {
         backdrop.classList.add('visible');
         listConnect.classList.add('visible');
         connect.classList.add('connect-active');
-        
     }
     connectClearSvg();
 };
@@ -71,27 +71,72 @@ const backdropList = () => {
     connect.classList.remove('connect-active');
     helpList.classList.remove('visible');
     help.classList.remove('help-active');
-    // itemAside.classList.remove('visible');
 }
 
 const backdropListAside = () => {
     listeAside.classList.remove('visible');
-    // backdrop.classList.remove('visible');
 }
 
 const showAside = () => {
     backdropList();
-    // itemAside.classList.add('visible');
     backdrop.classList.add('visible');
 }
 
-// const showAsideLi = () => {
+let slideIndex = 1;
+showSlides(slideIndex);
+function showSlides(n) {
+    // let slideIndex = 1;
+    let i;
+    if (n > slides.length) { slidesIndex = 1; }
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    
+    // slides[slideIndex-1].style.display = "flex";  
+    // dots[slideIndex-1].className += " active";
+    slides[n].style.display = "flex";  
+    dots[n].className += " active";
+}
+let slideIndex1 = 0
+showSlides1();
 
-// }
+function showSlides1() {
+    let i;
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex1++;
+    if (slideIndex1 > slides.length) {slideIndex1 = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex1-1].style.display = "flex";  
+    dots[slideIndex1-1].className += " active";
+     // Change image every 2 seconds
+    setTimeout(showSlides1, 2000);
+  }
+
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+  
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
 
 connect.addEventListener('click', showListConnect);
 backdrop.addEventListener('click', backdropList);
 help.addEventListener('click', showListHelp);
 listeAside.addEventListener('mouseover',  showAside)
 backdrop.addEventListener('mouseover', backdropListAside);
-// listeAsideMenu.addEventListener('mouseover', showAside);
+// dot.addEventListener('click', currentSlide);
+for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener('click', () => {
+        showSlides(i);
+    });
+}
