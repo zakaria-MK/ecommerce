@@ -359,5 +359,12 @@
         <use xlink:href="#cat-othercategories_a" />
     </symbol>
 
+    <symbol viewBox="0 0 24 24" id="arrow-left">
+        <path fill-rule="evenodd" d="M15.18 15.84L11.34 12l3.84-3.82L14 7l-5 5 5 5z" />
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="arrow-right">
+        <path fill-rule="evenodd" d="M9 15.84L12.84 12 9 8.18 10.18 7l5 5-5 5z" />
+    </symbol>
+
 </svg>
 

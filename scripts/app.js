@@ -7,8 +7,9 @@ let showListConnectSvg = document.getElementById('show-connect');
 let showListHelpSvg = document.getElementById('show-help');
 let listeAside = document.querySelector('.aside');
 let slides = document.getElementsByClassName('mySlides');
-// let dots = document.getElementsByClassName('dot');
 let dots = document.querySelectorAll('.dot');
+let left = document.querySelector('.left');
+let right = document.querySelector('.right');
 
 const showListConnect = () => {
     let listConnectClasses = listConnect.getAttribute('class');
@@ -83,60 +84,44 @@ const showAside = () => {
 }
 
 let slideIndex = 1;
+let timer = null;
 showSlides(slideIndex);
+
 function showSlides(n) {
-    // let slideIndex = 1;
-    let i;
-    if (n > slides.length) { slidesIndex = 1; }
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    
-    // slides[slideIndex-1].style.display = "flex";  
-    // dots[slideIndex-1].className += " active";
-    slides[n].style.display = "flex";  
-    dots[n].className += " active";
-}
-let slideIndex1 = 0
-showSlides1();
-
-function showSlides1() {
-    let i;
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-    }
-    slideIndex1++;
-    if (slideIndex1 > slides.length) {slideIndex1 = 1}    
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex1-1].style.display = "flex";  
-    dots[slideIndex1-1].className += " active";
-     // Change image every 2 seconds
-    setTimeout(showSlides1, 2000);
+  let i;
+  if (n==undefined){n = ++slideIndex}
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
   }
-
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-  
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "flex";
+  dots[slideIndex-1].className += " active";
+  timer = setTimeout(showSlides, 4000);
+} 
 
 connect.addEventListener('click', showListConnect);
 backdrop.addEventListener('click', backdropList);
 help.addEventListener('click', showListHelp);
 listeAside.addEventListener('mouseover',  showAside)
 backdrop.addEventListener('mouseover', backdropListAside);
-// dot.addEventListener('click', currentSlide);
+
 for (let i = 0; i < dots.length; i++) {
     dots[i].addEventListener('click', () => {
-        showSlides(i);
+        clearTimeout(timer);
+        showSlides(slideIndex = i+1);
     });
 }
+
+left.addEventListener('click', () => {
+    clearTimeout(timer);
+    showSlides(slideIndex += -1 );
+});
+
+right.addEventListener('click', () => {
+    clearTimeout(timer);
+    showSlides(slideIndex += 1);
+})
