@@ -80,7 +80,7 @@ const backdropListAside = () => {
 
 const showAside = () => {
     backdropList();
-    backdrop.classList.add('visible');
+    // backdrop.classList.add('visible');
 }
 
 let slideIndex = 1;

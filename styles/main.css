@@ -24,15 +24,16 @@
     -moz-user-select: none;
 }
 
-html {
+html , body {
     width: 100%;
-    height: 100%;
+    height: 200%;
 }
 
 body {
+    position: relative;
     width: 100%;
     background-color: #f5f5f5;
-    height: 100%;
+    height: 250%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 2.8rem 6.4rem auto 20rem;
@@ -49,7 +50,7 @@ body {
 
 .banner {
     grid-area: banner;
-    background: #141414;
+    background: #faf1da;
     color: #ffffff;
     text-align: center;
     -webkit-user-select: none;
@@ -75,7 +76,14 @@ body {
     font-size: 0.94rem;
 }
 
-.header-properties {
+.lang {
+    display: none;
+}
+
+header.header-properties {
+    height: 100%;
+    z-index: 70;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     display: flex;
@@ -206,29 +214,87 @@ body {
 
 @media (min-width: 47rem) {
     body {
+        position: relative;
        /* max-width: 84rem; */
-       width: 100%; 
+       grid-template-rows: 3.4rem 1.5rem 4.5rem auto 20rem;
        grid-template-columns: repeat(3, 1fr);
-       grid-template-rows: 3.8rem 4.5rem auto 20rem;
+       grid-template-areas: "banner banner banner" 
+                            "lang lang lang"
+                            "nav nav nav"
+                            "main main main"
+                            "footer footer footer";
+       width: 100%; 
     }
 
     .banner {
        min-width: 59rem;
        width: 100%;
        overflow: hidden;
+       display: flex;
+       justify-content: center;
+       /* position: relative; */
+       /* right0%; */
+       /* text-align: center; */
     }
 
     .banner .banner-info {
-        font-size: 1.4rem;
+        /* font-size: 1.4rem; */
         font-size-adjust:auto;
         font-family: 'Roboto';
-        font-weight: 900;
-        width: 38rem;
-        padding: 0.1rem;
+        /* font-weight: 900; */
+        /* width: 42rem; */
+        height: 4rem;
+        width: 80%;
+        /* padding: 0 auto; */
+        margin: 0 auto;
     }
 
-    .banner-info .color-banner{
-        font-size: 1.5rem;
+    .banner-info a {
+        margin: auto;
+    }
+
+    .banner-info a img{
+        height: 80%;
+        width: 100%;
+        min-width: 59rem;
+        margin: auto;
+    }
+
+    .lang {
+        grid-area: lang;
+        min-width: 59rem;
+        padding: 0.3rem;
+        /* width: 100%; */
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+    .lang a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .lang a:first-child {
+        border-right: 1px solid #6b6a6a;
+        padding-right: 0.3rem;
+        /* padding: 0.1rem; */
+    }
+
+    .lang a:last-child {
+        padding-left: 0.3rem;
+    }
+
+    .language {
+        display: flex;
+    }
+
+    .language svg ,
+    .language span {
+        font-size: 0.8rem;
+        font-weight: lighter;
+        vertical-align: middle;
     }
     
    .header-properties {
@@ -238,8 +304,6 @@ body {
         min-width: 59rem;
         margin: 0 auto;
         z-index: 3;
-        /* position: sticky;
-        top: 0rem; */
     }
 
     .header-adjust {
@@ -640,6 +704,7 @@ body {
     }
 
     main {
+        grid-area: main;
         display: flex;
         width: 98vw;
     }
@@ -648,7 +713,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-items: center;
-        justify-content: center;
+        /* justify-content: space-between; */
         margin: 1rem auto;
     }
 
@@ -776,11 +841,11 @@ body {
     }
 
     .aside-main a {
-        width: 45rem;
+        width: 44.5rem;
     }
 
     .aside-main img {
-        width: 45rem;
+        width: 44.5rem;
         height: 24rem;
     }
 
@@ -800,7 +865,7 @@ body {
         background-color: #bbb;
         border-radius: 50%;
         flex-direction: row;
-        z-index: 10;
+        z-index: 2;
         transition: background-color 0.6s ease;
       }
       
@@ -843,7 +908,7 @@ body {
     .our-services {
         display: flex;
         justify-content: space-between;
-        max-width: 73.5rem;
+        max-width: 60.5rem;
         margin-top: 1rem;
         margin-left: 0.5rem;
     }
@@ -874,30 +939,156 @@ body {
         margin-left: 0.6rem;
         vertical-align: middle;
     }
+
+    .sec-menu {
+        box-shadow: 0.05rem 0.1rem 0.1rem 0.1rem rgba(235, 235, 235, 0.664);
+        border-radius: 4px;
+        background-color: #ffffff;
+        padding-left: 0.2rem;
+        padding-right: 0.5rem;
+        max-width: 58.5rem;
+        margin-top: 1rem;
+        max-height: 22rem;
+        margin-left: 0.5rem;
+        overflow: hidden;
+    }   
+    
+    .sec-menu header h2 {
+        color: #464646;
+        font-size: 1.25rem;
+        margin: 0.7rem;
+    }
+
+    .sec {
+        display: flex;
+        justify-content: space-between;
+        max-width: 75rem;
+        overflow: hidden;
+    }
+
+    .item-menu2 {
+        min-width: 14.1rem ;
+        padding: 0.0rem 0.0rem 0 0.2rem;
+        margin: 0.3rem 0.12rem;
+    }
+
+    .item-menu2:hover {
+        box-shadow: -1px 2px 10px 0px rgba(158, 158, 158, 0.56);
+        border-radius: 4px;
+    }
+
+    .item-menu2__a {
+        text-decoration: none;
+        width: 0rem;
+        /* height: 5rem; */
+        font-size: 0.9rem;
+        color: inherit;
+        line-height: 1;
+        /* padding: 0.9rem; */
+    }
+
+    .item-menu2__a img {
+        width: 100%;
+        margin: 0rem;
+    }
+
+    .item-menu2__a .name ,
+    .item-menu2__a .price {
+        color: #2f2e2e;
+        font-weight: lighter;
+        margin: 0 0.5rem;
+        /* max-height: 0.5rem; */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    a.item-menu2__a p:first-child{
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        margin-top: 0.4rem;
+    }
+
+    a.item-menu2__a p:last-child {
+        text-decoration: line-through;
+        /* padding-bottom: 0.1rem; */
+        font-size: 0.8rem;
+        font-weight: lighter;
+        margin-top: 0.1rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .sec1 {
+        margin: 0 0.4rem;
+        display: inline-flex;
+        min-height: 18rem;
+        flex-wrap: wrap;
+    }
+
+    .item-cat__a {
+        max-width: 9.5rem;
+        max-height: 8.5rem;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-content: center;
+        text-decoration: none;
+        color: #2f2e2e;
+    }
+
+    .item-cat__a:hover {
+        box-shadow: -1px 2px 10px 0px rgba(158, 158, 158, 0.56);
+        border-radius: 4px;
+    }
+
+    .item-cat__a div ,
+    .item-cat__a p {
+        align-self: center;
+        font-size: 0.8rem;
+        font-weight: lighter;
+        text-align: center;
+    }
+
+    .item-cat__a div img {
+        width: 98%;
+    }
+
 }
 
 @media (min-width : 75rem) {
+    body {
+        position: relative;
+    }
 
     .banner {
-        width: 99.99vw;
+        width: 100%;
+        min-width: 73rem;
      }
-     .logo {
-        width: 12.1rem;
+
+     .banner-info a img{
+        height: 80%;
+        width: 80%;
+        min-width: 73rem;
+    }
+
+    .lang {
+       min-width: 73rem;
+    }
+
+    .logo {
+        width: 13rem;
      }
 
     .header-properties {
         flex-direction: row;
         align-items: center;
-        width: 99.99vw;
+        width: 100%;
         min-width: 65rem;
         margin: 0 auto;
-        /* position: sticky; */
-        /* top: 0; */
-        /* z-index: 100; */
     }
 
     .header-adjust {
-        min-width: 74rem;
+        min-width: 73rem;
     }
 
     .zone-search {
@@ -905,8 +1096,8 @@ body {
         border: 1px solid #aca8a8;
         border-radius: 5px;
         margin-right: 0rem;
-        width: 28rem; 
-        max-width: 30rem;
+        width: 27.5rem; 
+        max-width: 2.7.5rem;
         height: 2.55rem;
         background: white;
         vertical-align: middle;
@@ -940,6 +1131,27 @@ body {
         margin-top: 0.8rem;
     }
 
+    .our-services {
+        max-width: 73.5rem;
+    }
+
+    .sec-menu {
+        max-height: 25rem;
+        max-width: 73.5rem;
+    }
+
+    .item-menu2 {
+        min-width: 11.5rem;
+        margin: 0.5rem 0.12rem;
+    }
+
+    .sec1 {
+        min-height: 19.7rem;
+    }
+
+    .item-cat__a {
+        max-width: 12rem;
+        max-height: 9rem;
     
 }
 
