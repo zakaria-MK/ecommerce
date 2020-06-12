@@ -62,13 +62,22 @@ body {
 }
 
 .banner .banner-info {
-    font-size: 90%;
-    font-family: 'Roboto';
-    font-weight: 1100;
-    width: 97vw;
+    width: 100vw;
+    min-width: 22.5rem;
+    height: 100%;
     margin: 0 auto;
-    padding: 0.2rem 0.2rem;
-    text-align: center;
+    /* padding: 0.2rem 0.2rem; */
+    /* text-align: center; */
+}
+
+.banner-info a {
+    /* width: %; */
+    height: 100%;
+}
+
+.banner-info a img {
+    width: 100%;
+    height: 100%;
 }
 
 .banner-info .color-banner{
@@ -216,7 +225,7 @@ header.header-properties {
     body {
         position: relative;
        /* max-width: 84rem; */
-       grid-template-rows: 3.4rem 1.5rem 4.5rem auto 20rem;
+       grid-template-rows: 3rem 1.5rem 4.5rem auto 20rem;
        grid-template-columns: repeat(3, 1fr);
        grid-template-areas: "banner banner banner" 
                             "lang lang lang"
@@ -238,25 +247,21 @@ header.header-properties {
     }
 
     .banner .banner-info {
-        /* font-size: 1.4rem; */
         font-size-adjust:auto;
         font-family: 'Roboto';
-        /* font-weight: 900; */
-        /* width: 42rem; */
         height: 4rem;
-        width: 80%;
-        /* padding: 0 auto; */
+        width: 58.5rem;
         margin: 0 auto;
     }
 
     .banner-info a {
         margin: auto;
+        width: 100%;
     }
 
     .banner-info a img{
         height: 80%;
         width: 100%;
-        min-width: 59rem;
         margin: auto;
     }
 
@@ -875,6 +880,7 @@ header.header-properties {
 
     .left ,
     .right {
+        cursor: pointer;
         border-radius: 50%;
         top: 45%;
         position: absolute;
@@ -883,7 +889,9 @@ header.header-properties {
     }
 
     .left:hover ,
-    .right:hover {
+    .right:hover,
+    .left-m:hover,
+    .right-m:hover {
         display: initial;
         fill: white;
         background-color: #444242;
@@ -951,6 +959,7 @@ header.header-properties {
         max-height: 22rem;
         margin-left: 0.5rem;
         overflow: hidden;
+        position: relative;
     }   
     
     .sec-menu header h2 {
@@ -960,14 +969,33 @@ header.header-properties {
     }
 
     .sec {
+        position: relative;
         display: flex;
         justify-content: space-between;
         max-width: 75rem;
         overflow: hidden;
     }
 
+    .left-m ,
+    .right-m {
+        cursor: pointer;
+        border-radius: 50%;
+        top: 48%;
+        position: absolute;
+        fill: transparent;
+        padding: 0.35rem 0.45rem;
+    }
+
+    .left-m {
+        left: 2rem;
+    }
+
+    .right-m {
+        right: 2rem;
+    }
+
     .item-menu2 {
-        min-width: 14.1rem ;
+        min-width: 14.1rem;
         padding: 0.0rem 0.0rem 0 0.2rem;
         margin: 0.3rem 0.12rem;
     }
@@ -1063,12 +1091,21 @@ header.header-properties {
     .banner {
         width: 100%;
         min-width: 73rem;
-     }
+    }
 
-     .banner-info a img{
-        height: 80%;
-        width: 80%;
-        min-width: 73rem;
+    .banner .banner-info {
+        width: 73.5rem;
+    }
+
+    .banner-info a {
+        width: 100%;
+        height: 100%;
+    }
+
+    .banner-info a img{
+        height: 75%;
+        width: 100%;
+        /* min-width: 73rem; */
     }
 
     .lang {
@@ -1141,7 +1178,8 @@ header.header-properties {
     }
 
     .item-menu2 {
-        min-width: 11.5rem;
+        max-width: 11.9rem;
+        min-width: 11.9rem;
         margin: 0.5rem 0.12rem;
     }
 
@@ -1152,7 +1190,20 @@ header.header-properties {
     .item-cat__a {
         max-width: 12rem;
         max-height: 9rem;
-    
+    }
+
+    .left-m ,
+    .right-m {
+        top: 44%;
+    }
+
+    .left-m {
+        left: 3rem;
+    }
+
+    .right-m {
+        right: 3rem;
+    }
 }
 
 /* @media only screen and (min-width:) */
