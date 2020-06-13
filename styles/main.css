@@ -26,7 +26,7 @@
 
 html , body {
     width: 100%;
-    height: 200%;
+    height: 130%;
 }
 
 body {
@@ -1081,7 +1081,201 @@ header.header-properties {
         width: 98%;
     }
 
+    .before-foot {
+        box-shadow: 0.05rem 0.1rem 0.1rem 0.1rem rgba(235, 235, 235, 0.664);
+        border-radius: 4px;
+        background-color: #ffffff;
+        max-width: 58.5rem;
+        margin-left: 0.5rem;
+        margin-top: 1rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .before-foot__ele h1 ,
+    .before-foot__ele h2 {
+        font-size: 1.15rem;
+        font-weight: lighter;
+    }
+
+    .before-foot__ele p {
+        line-height: 16px;
+        word-spacing: 1.5px;
+        font-size: 0.78rem;
+        font-weight: lighter;
+    }
+
+    footer.footer {
+        height: 100%;
+        min-width: 59rem;
+        z-index: 70;
+        position: -webkit-sticky;
+        /* position: sticky; */
+        /* top: 0; */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-evenly; */
+        margin-left: 0rem;
+        grid-area: footer;
+        background: #252525;
+        color: white;
+        box-shadow: 0.05rem 0.05rem 0.05rem 0.05rem rgba(235, 235, 235, 0.664);
+    }
+
+    .first-foot {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 1.8rem 0;
+        margin: 0 auto;
+        max-width: 58.5rem;
+        min-width: 58.5rem;
+    }
+
+    .first-foot svg {
+        fill: white;
+    }
+
+    .logo-foot {
+        width: 25%;
+    }
+
+    .form-foot {
+        /* margin-top: 1.rem; */
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .input-foot {
+        display: flex;
+        position: relative;
+        height: 2rem;
+        width: 40%;
+        background-color: white;
+        border-radius: 5px;
+        margin-left: 0.1rem;
+    }
+
+    .input-foot input {
+        outline: none;
+        margin-left: 1.5rem;
+        padding: 0.2rem;
+        width: 80%;
+        border-color: transparent;
+    }
+
+    .input-foot svg {
+        position: absolute;
+        left: 0.4rem;
+        justify-self: start;
+        align-self: center;
+        fill: #979595;
+        vertical-align: bottom;
+    }
+
+    .footer-button button {
+        padding: 0.4rem 0.8rem;
+        background-color: #252525;
+        color: white;
+        border: 2px solid white;
+        border-radius: 3px;
+        /* margin: 0 0.3rem; */
+        vertical-align: middle;
+        cursor: pointer;
+    }
+
+    .footer-button button:hover {
+        color: #ffa500;
+        border-color: #ffa500;
+    }
+
+    .footer-button button:first-child {
+        margin-left: 0.4rem;
+        margin-right: 0.4rem;
+    }
+
+    .title-form__footer {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.7rem;
+    }
+
+    .title-form__footer span:first-child {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .title-form__footer span:last-child {
+        margin-bottom: 0.5rem;
+        margin-bottom: 0.8rem;
+        color: #cfc8c8;
+        font-weight: lighter;
+    }
+
+    .form-footer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footer-app {
+        max-width: 25%;
+    }
+
+    .footer-app__ele {
+        display: flex;
+        /* margin-left: 0.5rem; */
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-app__ele-text {
+        display: flex;
+        flex-direction: column;
+        /* font-size: 0.8rem; */
+        margin-left: 0.6rem;
+        /* line-height: 1.2rem; */
+    }
+
+    .footer-app__ele-text span:first-child {
+        margin-bottom: 0.4rem;
+        font-size: 0.75rem;
+    }
+    
+    .footer-app__ele-text span:last-child {
+        font-size: 0.75rem;
+        color: #ada9a9;
+        font-weight: lighter;
+    }
+
+    .svg-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+        /* max-width: 80%; */
+    }
+
+    .svg-footer a:first-child {
+        /* margin-right: 1.5rem; */
+    }
+
+    .svg-footer a:first-child ,
+    .svg-footer a:last-child {
+        border: 1px solid white;
+        /* height: 8rem; */
+        /* margin-right: 1.5rem; */
+        padding: 0.6rem 0.5rem 0rem 0.5rem;
+        border-radius: 6px;
+    }
+
+    .svg-footer a:hover svg , 
+    .svg-footer a:hover {
+        fill: #ffa500;
+        border-color: #ffa500;
+    }
+
 }
+
+/* 626+56+5+5 */
 
 @media (min-width : 75rem) {
     body {
@@ -1204,6 +1398,20 @@ header.header-properties {
     .right-m {
         right: 3rem;
     }
+
+    .before-foot {
+        max-width: 73.5rem;
+    }
+
+    .first-foot {
+        max-width: 73.5rem;
+        min-width: 73.5rem;;
+    }
+
+    .input-foot input {
+        width: 80%;
+    }
+
 }
 
 /* @media only screen and (min-width:) */
