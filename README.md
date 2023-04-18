@@ -1,3 +1,4 @@
 # ecommerce
-I make this project for object to learn and practise CSS features\
-You shoud use a server such Apache Server to run this project.
+This project was created to help me learn and practice CSS features.\
+This project should be run on a server such as Apache Server.
+
